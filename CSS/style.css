@@ -20,8 +20,6 @@ body {
 }
 
 /* Estiliza o container principal do menu (<header class="menu">). */
-
-
 .menu {
     background: #fffae4; /* Cor de fundo da barra. */
     height: 50px; /* Altura fixa da barra. */
@@ -37,7 +35,6 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil abaixo do menu. */
 }
 
-
 /* Estiliza o título (<h1>) que está dentro do menu. */
 .menu h1 {
     font-size: 1.5rem; /* Tamanho da fonte do título. */
@@ -47,7 +44,7 @@ body {
 /* Estiliza a tag <nav> que envolve os links. */
 .menu nav {
     /* Cria um espaçamento à esquerda, separando os links do título. */
-    margin-left: 50rem;
+    margin-left: auto;
 }
 
 /* Estiliza a lista (<ul>) que contém os links. */
@@ -76,7 +73,6 @@ body {
 .nav-links a:hover {
     color: #c5a659; /* Muda a cor do link ao passar o mouse. */
 }
-
 
 /* Estiliza o container principal da calculadora (<main class="container">). */
 .container {
@@ -262,11 +258,11 @@ button:hover {
 
 /* Estilo para o Footer */
 .social-footer {
-    background-color: #333; /*  Cor de fundo escura, comum para rodapés */
+    background-color: #333; /* Cor de fundo escura, comum para rodapés */
     color: #fff;
     text-align: center;
-    padding: 5px 0;
-    margin-top: 40px; /*  Espaço entre o conteúdo principal e o rodapé */
+    padding: 1px 0;
+    margin-top: 40px 0; /* Espaço entre o conteúdo principal e o rodapé */
 }
 
 .social-footer h3 {
@@ -284,7 +280,7 @@ button:hover {
 
 /* Estilo para as imagens dos ícones */
 .social-icon {
-    width: 35px; / Tamanho do ícone /
+    width: 35px; /* Tamanho do ícone */
     height: 35px;
     border-radius: 50%; /* Faz o ícone ficar em um círculo */
     transition: transform 0.3s ease; /* Efeito de transição suave */
@@ -294,10 +290,136 @@ button:hover {
 /* Efeito ao passar o mouse */
 .social-icon:hover {
     transform: scale(1.1); /* Aumenta o ícone um pouco ao passar o mouse */
-    opacity: 0.8; /*  Diminui a opacidade */
+    opacity: 0.8; /* Diminui a opacidade */
 }
 
 .social-footer p {
     font-size: 0.8em;
     opacity: 0.7;
 }
+/* Media Query para telas menores que 768px (tablets e celulares) */
+/* ============================================== */
+/* MEDIA QUERY: TORNANDO O SITE RESPONSIVO */
+/* ============================================== */
+
+@media (max-width: 768px) {
+    
+    /* CORREÇÃO DO BODY: Remove o padding-top fixo que pode causar problemas
+       e garante que o background se ajuste a telas menores. */
+    body {
+        padding-top: 100px; /* Aumenta o padding para dar espaço ao menu empilhado */
+    }
+
+    /* 1. CABEÇALHO/MENU */
+    .menu {
+        /* Muda de linha (horizontal) para coluna (vertical) */
+        flex-direction: column; 
+        height: auto; /* Permite que o menu cresça para acomodar o conteúdo */
+        padding: 10px 15px; /* Reduz o padding lateral */
+    }
+
+    /* Título do menu */
+    .menu h1 {
+        margin: 5px 0 10px 0; /* Centraliza o título */
+    }
+
+    /* Lista de Links */
+    .nav-links {
+        flex-direction: column; /* Empilha os links */
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .nav-links li {
+        margin: 0; /* Remove a margem lateral */
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block; /* Ocupa toda a largura do <li> para facilitar o clique */
+        padding: 10px 0;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+    
+    /* 2. CONTAINER PRINCIPAL (Home, Quem Somos, Contato) */
+    .container, .quem-somos-container, .contato-container {
+        width: 95%; /* Usa mais largura da tela */
+        margin: 20px auto; 
+        padding: 15px; /* Reduz o espaçamento interno */
+    }
+
+    /* 3. FORMULÁRIO (HOME) */
+    .formGroup {
+        /* Garante que labels e inputs fiquem em colunas */
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+    
+    .formGroup label,
+    .formGroup input[type="number"],
+    .formGroup select,
+    button[type="submit"] {
+        width: 100%; /* Largura total para todos os campos e o botão */
+        box-sizing: border-box; 
+    }
+
+    /* 4. CONTEÚDO DA EQUIPE (CONTATO) */
+    /* Garante que os cartões da equipe se adaptem */
+    .membro-equipe {
+        padding: 15px;
+    }
+
+    /* 5. RODAPÉ SOCIAL */
+    .social-links {
+        /* O Flexbox já está ótimo, mas reduz o espaço entre ícones */
+        gap: 10px; 
+    }
+
+    .social-icon {
+        width: 30px; 
+        height: 30px;
+    }
+}
+
+    /* CONTEÚDO PRINCIPAL/CONTAINER (Calculadora e Páginas de Conteúdo) */
+    .container, .contato-container {
+        padding: 15px;
+        margin: 20px auto; 
+        width: calc(100% - 30px); 
+    }
+
+    /* GRUPO DE CAMPOS DO FORMULÁRIO (Calculadora) */
+    .formGroup {
+        /* Para o alinhamento de Gênero, etc. */
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+    
+    .formGroup label,
+    .formGroup input[type="number"],
+    .formGroup select {
+        width: 100%; /* Largura total */
+        box-sizing: border-box; 
+        margin-bottom: 10px;
+    }
+
+    /* BOTÃO */
+    button[type="submit"] {
+        width: 100%; /* Botão de largura total */
+        padding: 12px;
+    }
+
+    /* RODAPÉ SOCIAL */
+    .social-footer {
+        padding: 15px 0;
+    }
+    
+    .social-icon {
+        width: 30px; 
+        height: 30px;
+    }
+
+    .social-links {
+        gap: 15px; 
+    }
