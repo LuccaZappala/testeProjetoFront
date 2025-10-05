@@ -1,0 +1,299 @@
+body {
+    /* Define uma "pilha" de fontes modernas e seguras para garantir boa aparência em qualquer sistema (MacOS, Windows, etc.). */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    /* Cor de fundo suave para a página inteira. */
+    background-color: #fffaf0;
+    
+    /* Remove a margem padrão que os navegadores colocam no corpo da página. */
+    margin: 0;
+
+    /* Adiciona um espaço no topo da página para que o conteúdo não comece escondido atrás do menu, que tem 50px de altura. */
+    padding-top: 70px;
+
+    background-image: url('../img/nutriconalCapa.webp'); /* Caminho para a sua imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    background-position: center; /* Centraliza a imagem no fundo */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-attachment: fixed; /* Fixa a imagem no fundo ao rolar a página */
+    
+}
+
+/* Estiliza o container principal do menu (<header class="menu">). */
+.menu {
+    background: #fffae4; /* Cor de fundo da barra. */
+    height: 50px; /* Altura fixa da barra. */
+    color: #333; /* Cor padrão do texto dentro do menu. */
+    position: fixed; /* Fixa o menu na tela, ele não rola com a página. */
+    top: 0; /* Cola o menu no topo. */
+    left: 0; /* Cola o menu na borda esquerda. */
+    width: 100%; /* Faz o menu ocupar toda a largura da tela. */
+    z-index: 1000; /* Garante que o menu fique na frente de todos os outros elementos. */
+    display: flex; /* Ativa o Flexbox para alinhar os itens internos (título e links). */
+    align-items: center; /* Centraliza os itens verticalmente dentro dos 50px de altura. */
+    padding: 0 40px; /* Adiciona espaçamentos nas laterais para o conteúdo não colar nas bordas. */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil abaixo do menu. */
+}
+
+/* Estiliza o título (<h1>) que está dentro do menu. */
+.menu h1 {
+    font-size: 1.5rem; /* Tamanho da fonte do título. */
+    margin: 0; /* Remove qualquer margem padrão do h1. */
+}
+
+/* Estiliza a tag <nav> que envolve os links. */
+.menu nav {
+    /* Cria um espaçamento à esquerda, separando os links do título. */
+    margin-left: 50rem;
+}
+
+/* Estiliza a lista (<ul>) que contém os links. */
+.nav-links {
+    list-style: none; /* Remove as "bolinhas" da lista. */
+    margin: 0; /* Remove margens padrão. */
+    padding: 0; /* Remove preenchimentos padrão. */
+    display: flex; /* Alinha os itens da lista (<li>) lado a lado. */
+}
+
+/* Estiliza cada item (<li>) da lista de links. */
+.nav-links li {
+    margin-left: 20px; /* Cria um espaço entre cada link. */
+}
+
+/* Estiliza os links (<a>) em si. */
+.nav-links a {
+    color: #333; /* Cor do texto do link. */
+    text-decoration: none; /* Remove o sublinhado. */
+    font-size: 1rem; /* Tamanho da fonte. */
+    font-weight: bold; /* Deixa o texto em negrito. */
+    transition: color 0.3s ease; /* Cria um efeito suave de 0.3s quando a cor do link mudar. */
+}
+
+/* Estiliza os links quando o mouse está sobre eles. */
+.nav-links a:hover {
+    color: #c5a659; /* Muda a cor do link ao passar o mouse. */
+}
+
+/* Estiliza o container principal da calculadora (<main class="container">). */
+.container {
+    background: #ffffff; /* Fundo branco. */
+    border-radius: 10px; /* Cantos arredondados. */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade. */
+    width: 90%; /* Ocupa 90% da largura da tela... */
+    max-width: 500px; /* ...mas nunca passará de 500px. */
+    margin: 2rem auto; /* Centraliza o container horizontalmente na página. */
+    padding: 2rem; /* Espaçamento interno. */
+    box-sizing: border-box; /* Faz com que o padding não "estoure" a largura total do container.
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+    padding: 20px;
+    border-radius: 8px;
+    /* Outros estilos que você já tem para o container */ 
+}
+
+/* Estiliza o título (<h1>) de dentro do container. */
+.container h1 {
+    text-align: center; /* Centraliza o texto. */
+    margin-top: 0; /* Remove margem do topo. */
+    margin-bottom: 1.5rem; /* Adiciona margem abaixo. */
+    color: #333;
+}
+
+/* Estiliza as divs que agrupam cada campo do formulário. */
+.formGroup {
+    margin-bottom: 1.2rem; /* Cria um espaço vertical entre os campos. */
+}
+
+/* Estiliza as labels (rótulos) dos campos. */
+.formGroup label {
+    display: block; /* Faz a label ocupar sua própria linha, ficando acima do campo. */
+    margin-bottom: 8px; /* Espaço entre a label e o campo abaixo dela. */
+    font-weight: 500; /* Deixa a fonte um pouco mais forte. */
+}
+
+/* Estiliza os campos de número e as caixas de seleção. */
+input[type="number"],
+select {
+    width: 100%; /* Ocupam toda a largura disponível. */
+    padding: 10px; /* Espaçamento interno. */
+    border: 1px solid #ccc; /* Borda cinza. */
+    border-radius: 5px; /* Cantos levemente arredondados. */
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Estilo geral para botões. */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #073fd8; /* Cor de fundo azul. */
+    color: #fff; /* Texto branco. */
+    border: none; /* Sem borda. */
+    border-radius: 5px;
+    cursor: pointer; /* Muda o cursor para uma "mãozinha". */
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Efeito suave na mudança de cor. */
+}
+
+/* Efeito ao passar o mouse sobre o botão. */
+button:hover {
+    background-color: #00289e; /* Escurece o azul. */
+}
+
+/* Container que guarda todo o resultado. */
+#resultado {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa; /* Fundo cinza claro. */
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+}
+
+/* Classe utilitária para esconder elementos. */
+.hidden {
+    display: none; /* Faz o elemento desaparecer completamente. */
+}
+
+/* Estilo específico para o botão verde "Gerar Dieta". */
+.dieta-button {
+    margin-top: 20px;
+    background-color: #28a745; /* Cor de fundo verde. */
+}
+
+.dieta-button:hover {
+    background-color: #218838; /* Escurece o verde. */
+}
+
+/* Container que exibe o texto da dieta gerado pela IA. */
+#dieta-resultado {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 5px;
+    /* Preserva as quebras de linha e espaços formatados pela IA. Essencial! */
+    white-space: pre-wrap;
+    text-align: left; /* Alinha o texto da dieta à esquerda. */
+    line-height: 1.6; /* Aumenta o espaço entre as linhas para melhor leitura. */
+}
+
+/* Estilo geral para o body (se quiser que todas as páginas tenham um fundo sutil) */
+
+/* Estilo específico para o container da página Quem Somos para a marca d'água */
+.quem-somos-container {
+    position: relative; /* Necessário para posicionar o pseudo-elemento */
+    /* Remova o background-color: rgba(...) se você tinha um */
+    /* Adapte o padding, margin, max-width, etc., conforme seu layout */
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff; /* Fundo branco sólido para o conteúdo */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden; /* Garante que a marca d'água não vaze se for maior */
+}
+
+/* Pseudo-elemento para a marca d'água */
+.quem-somos-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/nutriconalCapa.webp'); /* Caminho da sua imagem de marca d'água */
+    background-size: contain; /* Ajusta a imagem para caber no container */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1; /* Transparência para o efeito de marca d'água */
+    z-index: 0; /* Garante que fique atrás do conteúdo */
+    pointer-events: none; /* Impede que o pseudo-elemento interfira com cliques */
+}
+
+/* Estilos para o conteúdo dentro do container, para garantir que fique visível */
+.quem-somos-container h2,
+.quem-somos-container h3,
+.quem-somos-container p,
+.quem-somos-container ul {
+    position: relative; /* Coloca o conteúdo acima da marca d'água */
+    z-index: 1;
+}
+
+/* Estilos para os cartões dos membros da equipe */
+.membro-equipe {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.membro-equipe h3 {
+    color: #007bff; /* Cor principal, ajuste se tiver uma cor de marca */
+    margin-top: 0;
+}
+
+.membro-equipe p strong {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilos para a seção "O Que Fazemos" */
+.lista-o-que-fazemos {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-o-que-fazemos li {
+    margin-bottom: 20px;
+    border-left: 4px solid #28a745; /* Uma cor de destaque */
+    padding-left: 15px;
+}
+
+.lista-o-que-fazemos h4 {
+    margin-bottom: 5px;
+    color: #28a745;
+}
+
+/* Estilo para o Footer */
+.social-footer {
+    background-color: #333; /*  Cor de fundo escura, comum para rodapés */
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    margin-top: 40px; /*  Espaço entre o conteúdo principal e o rodapé */
+}
+
+.social-footer h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+/* Container dos links sociais */
+.social-links {
+    display: flex; /* Para alinhar os ícones lado a lado */
+    justify-content: center; /* Para centralizar os ícones */
+    gap: 20px; /* Espaçamento entre os ícones */
+    margin-bottom: 20px;
+}
+
+/* Estilo para as imagens dos ícones */
+.social-icon {
+    width: 35px; / Tamanho do ícone /
+    height: 35px;
+    border-radius: 50%; /* Faz o ícone ficar em um círculo */
+    transition: transform 0.3s ease; /* Efeito de transição suave */
+    /* Remove a borda se as imagens já forem circulares ou para ter um visual mais limpo */
+}
+
+/* Efeito ao passar o mouse */
+.social-icon:hover {
+    transform: scale(1.1); /* Aumenta o ícone um pouco ao passar o mouse */
+    opacity: 0.8; /*  Diminui a opacidade */
+}
+
+.social-footer p {
+    font-size: 0.8em;
+    opacity: 0.7;
+}

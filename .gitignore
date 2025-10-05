@@ -1,0 +1,5 @@
+# Arquivo de variáveis de ambiente - NUNCA ENVIAR!
+.env
+
+# Pasta de pacotes do Node
+node_modules
