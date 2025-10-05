@@ -21,7 +21,7 @@ body {
 
 /* Estiliza o container principal do menu (<header class="menu">). */
 
-@media (max-width: 768px) {
+
 .menu {
     background: #fffae4; /* Cor de fundo da barra. */
     height: 50px; /* Altura fixa da barra. */
@@ -36,7 +36,7 @@ body {
     padding: 0 40px; /* Adiciona espaçamentos nas laterais para o conteúdo não colar nas bordas. */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil abaixo do menu. */
 }
-}
+
 
 /* Estiliza o título (<h1>) que está dentro do menu. */
 .menu h1 {
