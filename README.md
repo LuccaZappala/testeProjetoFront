@@ -1,92 +1,115 @@
-# 🥗 Nutrir & Viver: Calculadora Nutricional e Guias
+# 🥗 Nutrir & Viver: Calculadora Nutricional com IA
 
-Bem-vindo ao repositório do projeto **Nutrir & Viver**! Este site estático e **totalmente responsivo** foi desenvolvido para oferecer uma ferramenta simples e acessível para o cálculo de calorias e macronutrientes, além de apresentar a missão e a equipe por trás da iniciativa.
+Bem-vindo ao repositório do projeto **Nutrir & Viver**! Esta é uma aplicação web completa e **totalmente responsiva** que oferece uma ferramenta para cálculo de calorias e macronutrientes, com a funcionalidade adicional de gerar planos de dieta personalizados através de Inteligência Artificial.
 
 ## 🌟 Visão Geral
 
-O **Nutrir & Viver** tem como missão desmistificar a nutrição. Em um mundo cheio de dietas milagrosas e informações conflitantes, o projeto busca ser um porto seguro onde a ciência se encontra com o sabor e o equilíbrio.
+O **Nutrir & Viver** tem como missão desmistificar a nutrição. O projeto oferece uma calculadora precisa e, como diferencial, se conecta a uma IA para criar sugestões de dietas realistas e baseadas nos dados do usuário, tornando a nutrição ainda mais acessível e personalizada.
 
-## Principais Funcionalidades
+## ✨ Principais Funcionalidades
 
-* **Calculadora de TDEE e Macros:** A ferramenta principal permite ao usuário calcular seu Gasto Energético Total Diário (TDEE) e receber a distribuição de macronutrientes (proteínas, carboidratos e gorduras) com base em seu objetivo (Cutting, Manutenção ou Bulking).
-* **Design Responsivo:** A interface se adapta perfeitamente a qualquer dispositivo, desde **smartphones** a **desktops**, garantindo uma experiência de usuário fluida em todas as páginas (Home, Quem Somos, Contato).
+* **Calculadora Nutricional:** Calcula o Gasto Energético Total Diário (TDEE) e a distribuição de macronutrientes com base em dados como gênero, idade, peso, altura, nível de atividade e objetivo.
+* **Geração de Dietas com IA:** Após o cálculo, o usuário pode solicitar a geração de 3 opções de planos alimentares diários, criados pela API da OpenAI (`gpt-4o`) para atingir suas metas.
+* **Design Responsivo:** A interface se adapta perfeitamente a qualquer dispositivo, desde **smartphones** a **desktops**, utilizando **Media Queries** e **Flexbox**.
 * **Páginas Institucionais:**
-    * **Quem Somos:** Apresenta a filosofia do projeto.
-    * **Contato:** Apresenta a equipe técnica.
+    * **Quem Somos:** Apresenta a filosofia e a missão do projeto.
+    * **Contato:** Apresenta a equipe técnica por trás da aplicação.
 
 ## 🛠️ Tecnologias Utilizadas
 
-Este projeto é inteiramente construído com tecnologias front-end básicas.
+Este projeto é uma aplicação **Full Stack**, utilizando tecnologias de frontend e backend.
 
-* **HTML5:** Estrutura e semântica das páginas.
-* **CSS3:** Estilização e implementação da **responsividade** através de **Media Queries** e **Flexbox** para o layout mobile.
-* **JavaScript:** Lógica principal para realizar os cálculos nutricionais e manipular a interface de resultados.
+* **Frontend:**
+    * **HTML5:** Estrutura e semântica das páginas.
+    * **CSS3:** Estilização, layout com Flexbox e responsividade com Media Queries.
+    * **Bootstrap 5:** Componentes de formulário para uma melhor UI/UX.
+    * **JavaScript (Vanilla):** Lógica da calculadora, manipulação do DOM e comunicação (`fetch API`) com o backend.
+
+* **Backend:**
+    * **Node.js:** Ambiente de execução do servidor.
+    * **Express.js:** Framework para criação do servidor e do endpoint da API.
+    * **OpenAI API:** Para a geração de dietas personalizadas.
+    * **DotEnv:** Para gerenciamento seguro das chaves de API.
 
 ## 📁 Estrutura do Projeto
 
-A organização dos arquivos segue uma estrutura clara e modular:
-
-A organização dos arquivos segue uma estrutura clara e modular:
-nutrir-e-viver/
+CALCULADORA NUTRICIONAL/
 ## CSS/
-   - style.css: - Estilos globais e Media Queries para responsividade.
    - bootstrap.min.css
+   - style.css
+## img/
+   - nutriconalCapa.webp
+   - (ícones de redes sociais)
 ## JS/
-  - script.js: - Lógica da Calculadora (a ser implementada).
+   - script.js: - (Lógica do Frontend)
+   - server.js: - (Lógica do Backend)
+## node_modules/   (Gerado pelo 'npm install')
 ## Pages/
-  - contato.html: - Página da Equipe e Contato com footer social.
-  - quemsomos.html: - Página da Missão e Filosofia do projeto.
-## img/  - Pasta para todas as imagens
-  - nutriconalCapa.webp: - Imagem de fundo da Home.
-  - icones/       Ícones de redes sociais.
-## index.html  - Página inicial (Calculadora Nutricional).
+   - contato.html
+   - quemsomos.html
+### env   (Arquivo local para a chave da API - NÃO COMPARTILHAR)
+##.gitignore
+## index.html    (Página inicial - Calculadora)
+## package.json
+## package-lock.json
 ## README.md
 
-## ⚙️ Como Executar
 
-O projeto não requer instalação de pacotes ou servidores. Basta um navegador moderno.
+## ⚙️ Como Executar o Projeto Localmente
 
-1.  **Clone o repositório:** (Se estiver no GitHub)
+Para rodar este projeto, você precisa executar o **Frontend** e o **Backend** simultaneamente.
+
+### Pré-requisitos
+* **Node.js** instalado (versão LTS recomendada).
+* Uma **chave de API da OpenAI**.
+
+### Passo a Passo
+
+1.  **Clone o repositório:**
     ```bash
     git clone [LINK_DO_SEU_REPOSITORIO]
+    cd [NOME_DA_PASTA]
     ```
-2.  **Abra o arquivo:** Localize o arquivo `index.html` na pasta raiz.
-3.  **Execute:** Clique duas vezes em `index.html` para abrir a calculadora em seu navegador.
+
+2.  **Instale as dependências do Backend:**
+    Este comando lê o `package.json` e baixa todas as bibliotecas necessárias para o servidor (`Express`, `OpenAI`, etc.) para a pasta `node_modules`.
+    ```bash
+    npm install
+    ```
+
+3.  **Configure a Chave de API:**
+    * Na pasta raiz do projeto, crie um arquivo chamado `.env`.
+    * Dentro deste arquivo, adicione sua chave da OpenAI no seguinte formato:
+        ```
+        OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        ```
+
+4.  **Inicie o Servidor Backend:**
+    * Abra um terminal na pasta raiz do projeto.
+    * Execute o comando abaixo. Este terminal deve permanecer aberto enquanto você usa a aplicação.
+    ```bash
+    node JS/server.js
+    ```
+    * Você deverá ver a mensagem: `Servidor rodando na porta http://localhost:3000`
+
+5.  **Inicie o Frontend:**
+    * Em um editor como o VS Code, clique com o botão direito no arquivo `index.html`.
+    * Selecione **"Open with Live Server"** (ou abra o arquivo diretamente no seu navegador).
+    * A página abrirá no navegador e agora poderá se comunicar com o servidor que está rodando.
 
 ## 👤 Equipe
 
 Conheça os especialistas que dão vida ao **Nutrir & Viver**:
 
-| Nome |
-| :--- |
-| Bruno Barbosa |
+| Nome              |
+| :---------------- |
+| Bruno Barbosa     |
 | Diana Souza Ribeiro |
-| Lucca Zappala |
-| Enzo Converso |
+| Lucca Zappala     |
+| Enzo Converso     |
 
 
 
-CALCULADORA NUTRICIONAL/
-├── CSS/
-│   ├── bootstrap.min.css
-│   └── style.css
-├── img/
-│   ├── nutriconalCapa.webp
-│   └── (ícones de redes sociais)
-├── JS/
-│   ├── script.js       (Lógica do Frontend)
-│   └── server.js       (Lógica do Backend)
-├── node_modules/       (Gerado pelo 'npm install')
-├── Pages/
-│   ├── contato.html
-│   └── quemsomos.html
-├── .env                (Arquivo local para a chave da API - NÃO COMPARTILHAR)
-├── .gitignore
-├── index.html          (Página inicial - Calculadora)
-├── package.json
-├── package-lock.json
-└── README.md
-```
 
 
 
