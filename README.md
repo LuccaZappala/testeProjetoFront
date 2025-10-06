@@ -66,6 +66,27 @@ Conheça os especialistas que dão vida ao **Nutrir & Viver**:
 
 
 
+CALCULADORA NUTRICIONAL/
+├── CSS/
+│   ├── bootstrap.min.css
+│   └── style.css
+├── img/
+│   ├── nutriconalCapa.webp
+│   └── (ícones de redes sociais)
+├── JS/
+│   ├── script.js       (Lógica do Frontend)
+│   └── server.js       (Lógica do Backend)
+├── node_modules/       (Gerado pelo 'npm install')
+├── Pages/
+│   ├── contato.html
+│   └── quemsomos.html
+├── .env                (Arquivo local para a chave da API - NÃO COMPARTILHAR)
+├── .gitignore
+├── index.html          (Página inicial - Calculadora)
+├── package.json
+├── package-lock.json
+└── README.md
+```
 
 
 
